@@ -1,5 +1,15 @@
 import com.ethiack.HttpResponse;
 
+HttpResponse launchScan(List<String> urls) {
+    String json = """{    
+        "url": "$urls",
+    }""";    
+
+    String requestUrl = "http://localhost:3001/v1/scans/launch";    
+
+    return doPostHttpRequestWithJson(json, requestUrl);    
+}
+
 HttpResponse doGetHttpRequest(String requestUrl){
     URL url = new URL(requestUrl);    
     HttpURLConnection connection = url.openConnection();    
