@@ -77,8 +77,8 @@ HttpResponse doHttpRequestWithJson(String json, String requestUrl, String verb){
         error("\n$verb to URL: $requestUrl\n    JSON: $json\n    HTTP Status: $resp.statusCode\n    Message: $resp.message\n    Response Body: $resp.body");    
     }    
 
-    this.printDebug("Request ($verb):\n  URL: $requestUrl\n  JSON: $json");    
-    this.printDebug("Response:\n  HTTP Status: $resp.statusCode\n  Message: $resp.message\n  Response Body: $resp.body");    
+    // this.printDebug("Request ($verb):\n  URL: $requestUrl\n  JSON: $json");    
+    // this.printDebug("Response:\n  HTTP Status: $resp.statusCode\n  Message: $resp.message\n  Response Body: $resp.body");    
 
     return resp;    
 }
