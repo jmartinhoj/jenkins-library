@@ -1,4 +1,5 @@
 import com.ethiack.HttpResponse;
+import groovy.json.JsonOutput;
 
 HttpResponse launchScan(List<String> urls) {
     String json = JsonOutput.toJson(   
