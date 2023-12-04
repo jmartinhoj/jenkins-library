@@ -1,12 +1,20 @@
 import com.ethiack.HttpResponse;
 
 HttpResponse launchScan(List<String> urls) {
-    String json = JsonOutput.toJson({   
-        urls: urls, 
-    });
+    // Create a JSON builder
+    def jsonBuilder = new groovy.json.JsonBuilder()
+
+    // Build the JSON structure
+    def json = jsonBuilder {
+        "urls" urls
+    }
+    def jsonString = json.toString()
+    // String json = JsonOutput.toJson({   
+    //     urls: urls, 
+    // });
     String requestUrl = "http://localhost:3001/v1/scans/launch";    
 
-    return doPostHttpRequestWithJson(json, requestUrl);    
+    return doPostHttpRequestWithJson(jsonString, requestUrl);    
 }
 
 HttpResponse doGetHttpRequest(String requestUrl){
