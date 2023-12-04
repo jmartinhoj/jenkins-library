@@ -1,3 +1,5 @@
+import com.ethiack.HttpResponse;
+
 HttpResponse doGetHttpRequest(String requestUrl){
     URL url = new URL(requestUrl);    
     HttpURLConnection connection = url.openConnection();    
