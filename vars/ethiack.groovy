@@ -1,10 +1,9 @@
 import com.ethiack.HttpResponse;
 
 HttpResponse launchScan(List<String> urls) {
-    String json = """{    
-        "url": $urls,
-    }""";    
-
+    String json = JsonOutput.toJson({   
+        urls: urls, 
+    });
     String requestUrl = "http://localhost:3001/v1/scans/launch";    
 
     return doPostHttpRequestWithJson(json, requestUrl);    
